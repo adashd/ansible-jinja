@@ -1,0 +1,10 @@
+- hosts: localhost
+  vars:
+  - name: [ "John", "Jane", "Doe", "Smith" ]
+  tasks:
+  - template:
+      src: "jinja.j2"
+      dest: "output.txt"
+
+  - debug:
+      msg: "{{ groups.myweb }}"
